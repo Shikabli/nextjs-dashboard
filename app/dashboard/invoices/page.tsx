@@ -13,11 +13,12 @@ export default async function Page(props: {
     page?: string;
   }>;
 }) {
+
   const searchParams = await props.searchParams;
   const query = searchParams?.query || '';
   const currentPage = Number(searchParams?.page) || 1;
   const totalPages = await fetchInvoicesPages(query);
- 
+
   return (
     <div className="w-full">
       <div className="flex w-full items-center justify-between">
