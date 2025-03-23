@@ -127,9 +127,14 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
                     {error}
                   </p>
                 ))}
-              <p className="mt-2 text-sm text-red-500" key={state.message}>
+                {state.message && (
+                  <>
+                    <p className="text-sm text-red-500">{state.message}</p>
+                  </>
+                )}
+              {/* <p className="mt-2 text-sm text-red-500" key={state.message}>
                 {state.message}
-              </p>
+              </p> */}
             </div>
           </div>
         </fieldset>
